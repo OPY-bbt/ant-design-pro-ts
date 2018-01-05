@@ -1,2 +1,2 @@
 # ant-design-pro-ts
-use typescript refactor [Ant Design specification](https://github.com/ant-design/ant-design-pro)
+use typescript refactor [Ant Design Pro](https://github.com/ant-design/ant-design-pro)
