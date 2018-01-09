@@ -5,15 +5,22 @@ import {
   Switch
 } from 'react-router-dom';
 
-import Home from './routers/Dashboard/Analysis';
-import Login from './routers/User/Login';
+import getNavData from './common/nav';
+
+function getLayout(navData: object, path: string): object {
+  return navData;
+}
 
 function RouterConfig() {
+
+  const navData = getNavData();
+  const UserLayout = getLayout(navData, 'UserLayout').component;
+  const BaseLayout = getLayout(navData, 'BasicLayout').component;
   return (
       <Router>
         <Switch>
-          <Route path="/" exact={true} component={Home} />
-          <Route path="/user" component={Login} />
+          <Route path="/" exact={true} render={() => <BaseLayout />} />
+          <Route path="/user" render={() => <UserLayout />} />
         </Switch>
       </Router>
   );
